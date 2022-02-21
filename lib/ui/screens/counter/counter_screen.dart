@@ -1,4 +1,3 @@
-import 'package:di_demo/di/service_locator.dart';
 import 'package:di_demo/ui/screens/counter/counter_vm.dart';
 import 'package:flutter/material.dart';
 

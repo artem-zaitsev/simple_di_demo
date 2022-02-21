@@ -1,11 +1,15 @@
-import 'package:di_demo/domain/counter.dart';
-import 'package:di_demo/ui/screens/counter/counter_screen.dart';
+import 'package:di_demo/di/app_configurator.dart';
 import 'package:di_demo/ui/screens/counter/di/di.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    const AppDependencyConfigurator(
+      child: MyApp(),
+    ),
+  );
 }
+
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
