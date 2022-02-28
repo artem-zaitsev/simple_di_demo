@@ -1,4 +1,4 @@
-import 'package:di_demo/services/counter_service.dart';
+import 'package:di_demo/di/app_component.dart';
 import 'package:di_demo/ui/screens/counter/counter_screen.dart';
 import 'package:di_demo/ui/screens/counter/counter_vm.dart';
 import 'package:flutter/material.dart';
@@ -22,6 +22,6 @@ class CounterRoute extends MaterialPageRoute {
 
 CounterScreenVm createVm(BuildContext context) {
   return CounterScreenVm(
-    context.read<CounterService>(),
+    context.read<AppComponent>().counterService,
   );
 }

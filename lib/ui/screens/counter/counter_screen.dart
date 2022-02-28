@@ -1,6 +1,6 @@
 import 'package:di_demo/ui/screens/counter/counter_vm.dart';
+import 'package:di_demo/ui/screens/counter/widgets/custom_button/btn_widget.dart';
 import 'package:flutter/material.dart';
-
 
 class CounterScreen extends StatefulWidget {
   final CounterScreenVm vm;
@@ -17,7 +17,8 @@ class CounterScreen extends StatefulWidget {
 class _CounterScreenState extends State<CounterScreen> {
   CounterScreenVm get vm => widget.vm;
 
-  void _incrementCounter() {
+  void _incrementCounter(String s) {
+    print(s);
     vm.inc();
   }
 
@@ -39,11 +40,12 @@ class _CounterScreenState extends State<CounterScreen> {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      floatingActionButton: Btn(inc: _incrementCounter),
+      // FloatingActionButton(
+      //   onPressed: _incrementCounter,
+      //   tooltip: 'Increment',
+      //   child: const Icon(Icons.add),
+      // ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
